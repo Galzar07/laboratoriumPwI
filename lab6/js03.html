@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <h1>
+        Kalkulator jQuery
+    </h1>
+    <p>Pierwsza liczba: <input type="text" id="liczba1" maxlength="7" value="0"></p>
+    <p>Druga Liczba : <input type="text" id="liczba2" maxlength="7" value="0"></p>
+    <button id="wynik">Poznaj wynik</button>
+
+    <p>dodawanie <output name="dodawanie" id="dodawanie" for="liczba1 liczba2"></output></p>
+
+    <p>odejmowanie <output name="odejmowanie" id="odejmowanie" for="liczba1 liczba2"></output></p>
+
+    <p>mnozenie <output name="mnozenie" id="mnozenie" for="liczba1 liczba2"></output></p>
+
+    <p>dzielenie <output name="dzielenie" id="dzielenie" for="liczba1 liczba2"></output></p>
+
+    <script>
+        $(" #wynik").click(function () {
+            let liczba1 = parseFloat($("#liczba1").val());
+            let liczba2 = parseFloat($("#liczba2").val());
+            $("#dodawanie").val(liczba1 + liczba2);
+            $("#odejmowanie").val(liczba1 - liczba2);
+            $("#mnozenie").val(liczba1 * liczba2);
+            if (liczba2 === 0) {
+                alert("nie mozna dzielic przez 0")
+            } else {
+                $("#dzielenie").val(liczba1 / liczba2);
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

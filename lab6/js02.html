@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>
+        wypisywanie w konsoi, koniecznie otworz konsole! :)
+    </h1>
+
+    <button onClick=calc id="wynik">Zobacz konsole</button>
+
+    <script type="text/javascript">
+        const btn = document.querySelector("#wynik");
+
+        function calc() {
+            let i = 10;
+            let j = 0;
+            while (j < 20) {
+                console.log(i)
+                i += 2;
+                j++;
+            }
+
+
+        }
+        btn.addEventListener("click", calc);
+    </script>
+</body>
+
+</html>

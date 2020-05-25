@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>
+        Kalkulator
+    </h1>
+    <p>Pierwsza liczba: <input type="text" id="liczba1" maxlength="7" value="0"></p>
+    <p>Druga Liczba : <input type="text" id="liczba2" maxlength="7" value="0"></p>
+    <button id="wynik">Poznaj wynik</button>
+
+    <p>dodawanie <output name="dodawanie" id="dodawanie" for="liczba1 liczba2"></output></p>
+
+    <p>odejmowanie <output name="odejmowanie" id="odejmowanie" for="liczba1 liczba2"></output></p>
+
+    <p>mnozenie <output name="mnozenie" id="mnozenie" for="liczba1 liczba2"></output></p>
+
+    <p>dzielenie <output name="dzielenie" id="dzielenie" for="liczba1 liczba2"></output></p>
+
+    <script type="text/javascript">
+        const btn = document.querySelector("#wynik");
+        let dod = document.querySelector("#dodawanie");
+        let odej = document.querySelector("#odejmowanie");
+        let mno = document.querySelector("#mnozenie");
+        let dziel = document.querySelector("#dzielenie");
+
+
+
+        function calc() {
+            const liczba1 = parseFloat(document.querySelector("#liczba1").value);
+            const liczba2 = parseFloat(document.querySelector("#liczba2").value);
+            dod.value = liczba1 + liczba2;
+            odej.value = liczba1 - liczba2;
+            mno.value = liczba1 * liczba2;
+            if (liczba2 === 0) {
+                alert("nie mozna dzielic przez 0")
+            } else {
+                dziel.value = liczba1 / liczba2;
+            }
+
+
+        }
+        btn.addEventListener("click", calc);
+    </script>
+</body>
+
+</html>
